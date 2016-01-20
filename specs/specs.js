@@ -9,14 +9,14 @@ describe('pigLatin', function() {
   it("takes two consonants from the beginning of a word and moves it to the end of it, and adds 'ay' to the end of it.", function() {
     expect(pigLatin("theater")).to.equal("eaterthay");
   });
-
-
 });
 
+describe("indexOfFirstVowel", function(){
+  it("returns 0 for a word that starts with a vowel", function(){
+    expect(indexOfFirstVowel("apple")).to.equal(0);
+  });
 
-
-// describe('leapYear', function() {
-//   it("is false for a year that is not divisible by 4, 100, or 400", function() {
-//     expect(leapYear(1993)).to.equal(false);
-//   });
-// });
+  it("it returns 1 for a word that starts with a single consonant", function (){
+    expect(indexOfFirstVowel("bob")).to.equal(1);
+    });
+});
