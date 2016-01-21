@@ -1,10 +1,3 @@
-// var pigLatin = function(word) {
-//   if (word[0] === 'a' || word[0] === 'e' || word['i'] || word === 'o' || word === 'u' ) {
-//     return word + 'ay';
-//   } else {
-//     return word.slice(1) + word[0] + 'ay';
-//   }
-// };
 
 
 var pigLatin = function(englishWord) {
@@ -27,3 +20,16 @@ var indexOfFirstVowel = function(word) {
     }
   }
 };
+
+$(document).ready(function() {
+  $("form#pig-latin").submit(function(event) {
+    var word = $("input#word").val();
+    var outPut = pigLatin(word);
+
+    $("#result").text(outPut);
+    $(".yeah").show();
+
+
+    event.preventDefault();
+  });
+ });
